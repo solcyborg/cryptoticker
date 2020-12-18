@@ -5,9 +5,9 @@ import time
 root = tkinter.Tk()
 
 def task():
-    crypto = cryptocompare.get_price(['BTC','ETH', 'VET'],['USD'])
-    l1 = tkinter.Label(text = ('crypto'+ str(crypto)), font = ("Arial" , 14))
-    l1.grid(row =0 ,column = 0 , sticky = tkinter.E)
+    crypto = cryptocompare.get_price(['BTC','ETH', 'VET','XRP'],['USD'])
+    l1 = tkinter.Label(text = ('Price'+ str(crypto)), font = ("Arial" , 14), fg =('#1aff1a'), bg=('#000000'))
+    l1.grid(row = 1 ,column = 1 , sticky = tkinter.E)
     root.after(2000, task)  # reschedule event in 2 seconds
 
 root.after(2000, task)
