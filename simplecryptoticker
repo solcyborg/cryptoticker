@@ -1,0 +1,14 @@
+import cryptocompare
+import tkinter
+import time
+
+root = tkinter.Tk()
+
+def task():
+    crypto = cryptocompare.get_price(['BTC','ETH', 'VET'],['USD'])
+    l1 = tkinter.Label(text = ('crypto'+ str(crypto)), font = ("Arial" , 14))
+    l1.grid(row =0 ,column = 0 , sticky = tkinter.E)
+    root.after(2000, task)  # reschedule event in 2 seconds
+
+root.after(2000, task)
+root.mainloop()
